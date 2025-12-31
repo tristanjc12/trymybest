@@ -1,0 +1,167 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #00f2ff; /* Blue background */
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Navigation Menu */
+.menu {
+    text-align: center;
+    background-color: rgba(20, 13, 18, 0.564);
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(244, 243, 243);
+    font-size: 15px;
+    margin: 0 20px;
+}
+
+.menu nav a:hover {
+    color: rgb(215, 3, 98);
+    font-size: 16px; /* Slightly increased font size on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Typography / Headings */
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.home2 {
+    background-color: rgba(20, 13, 18, 0.564);
+    padding: 50px;
+    margin: 20px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+    color: aliceblue;
+    padding: 20px;
+}
+
+.home3 {
+    color: aliceblue;
+    text-align: center;
+    font-size: large;
+    margin: 10px;
+    padding: 20px;
+}
+
+h4 {
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px 20px 10px 20px;
+    font-size: large;
+}
+
+/* Timeline Section */
+.timeline ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.timeline li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    text-align: left;
+    font-style: italic;
+}
+
+/* Container and Gallery (3D Effect) */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+    -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3,3,3,0.2));
+    border: 3px ridge #a5b1c2;
+    margin: 5px;
+}
+
+.image {
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.container:hover > :not(:hover) {
+    opacity: 0.3;
+}
+
+.container2 {
+    width: 200px;
+    height: 350px;
+    position: relative; /* Changed from absolute to relative */
+    margin: 20px auto; /* Added margin for centering */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: gallery 20s linear infinite;
+    cursor: pointer;
+}
+
+.container2 span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+
+.container2 span img {
+    position: absolute;
+    border-radius: 10px;
+    border: 6px ridge #ccc;
+    width: 100%; /* Ensure images fill the span */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+/* Keyframes for 3D Gallery */
+@keyframes gallery {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+/* Picture & Letter Sections */
+.picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.letter {
+    background-color: #a70334ab;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+}
